@@ -24,15 +24,15 @@ data("USDistLag")
 
 #================================Descriptive===================================#
 ??USDistLag                       #checking what the data is about
-data1 = ts(USDistLag)             #converting data to TS and storing it in data1
-data1Df = as.data.frame(data1)    #converting data1 to a data frame (data1Df)
-summary(data1Df)                    #brief summary of the data
-variable.names(data1Df)             #gives you the names of the variables
-View(data1Df)                       #to view the data 
+data1=USDistLag                   #store USDistLag to data1
+summary(data1)                    #brief summary of the data
+variable.names(data1)             #gives you the names of the variables
+View(data1)                       #to view the data 
 
 #================================DATA VISUALIZATION============================#
 
 #Scatter plot:ScatConsGnpR
+data1Df = as.data.frame(data1)    #converting data1 to a data frame 
 data1Df %>%
   ggplot(aes(gnp,consumption))+
   geom_point(color="purple")+
@@ -44,7 +44,7 @@ data1Df %>%
 #Dependent;consumption
 
 #2.Define and fit the model
-Reg1 = dynlm(consumption ~ gnp + L(gnp,1), data = data1Df)
+Reg1 = dynlm(consumption ~ gnp + L(gnp,1), data = data1)
 
 #3.Regression results
 summary(Reg1)
