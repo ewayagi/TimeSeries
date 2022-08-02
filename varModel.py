@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 """
 Spyder Editor
+Authors:kkitonga & ewayagi
+content:VAR model
+Date:02/08/2022
 
-This is a temporary script file.
 """
 
 #===========================LOADING LIBRARIES=================================#
